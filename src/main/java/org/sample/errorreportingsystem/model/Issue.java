@@ -1,13 +1,49 @@
 package org.sample.errorreportingsystem.model;
 
+import java.util.Date;
+
 public class Issue {
 
+    private Integer id;
     private String area;
     private String name;
     private String surname;
     private String phone;
     private String email;
     private String description;
+    private Date creationDate;
+
+    /**
+     * No args class constructor.
+     */
+    public Issue() {}
+
+    /**
+     * Class constructor.
+     *
+     * @param area
+     * @param name
+     * @param surname
+     * @param phone
+     * @param email
+     * @param description
+     */
+    public Issue(String area, String name, String surname, String phone, String email, String description) {
+        this.area = area;
+        this.name = name;
+        this.surname = surname;
+        this.phone = phone;
+        this.email = email;
+        this.description = description;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getArea() {
         return area;
@@ -55,5 +91,13 @@ public class Issue {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 }
