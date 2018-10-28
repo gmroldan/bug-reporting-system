@@ -1,5 +1,7 @@
 package org.sample.errorreportingsystem.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Issue {
@@ -11,6 +13,8 @@ public class Issue {
     private String phone;
     private String email;
     private String description;
+
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
     private Date creationDate;
 
     /**
@@ -35,6 +39,29 @@ public class Issue {
         this.phone = phone;
         this.email = email;
         this.description = description;
+    }
+
+    /**
+     * Class constructor.
+     *
+     * @param id
+     * @param area
+     * @param name
+     * @param surname
+     * @param phone
+     * @param email
+     * @param description
+     * @param creationDate
+     */
+    public Issue(Integer id, String area, String name, String surname, String phone, String email, String description, Date creationDate) {
+        this.id = id;
+        this.area = area;
+        this.name = name;
+        this.surname = surname;
+        this.phone = phone;
+        this.email = email;
+        this.description = description;
+        this.creationDate = creationDate;
     }
 
     public Integer getId() {

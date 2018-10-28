@@ -11,6 +11,27 @@
             </div>
         </div>
 
+        <br/>
+
+        <table id="issues" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Área</th>
+                    <th>Creador</th>
+                    <th>Fecha de Creación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="issue : ${selections}">
+                    <td th:text="${issue.id}"/>
+                    <td th:text="${issue.area}"/>
+                    <td th:text="${issue.name + ' ' + issue.surname}"/>
+                    <td th:text="${#dates.format(issue.creationDate, 'dd/MM/yyyy HH:mm')}"/>
+                </tr>
+            </tbody>
+        </table>
+
     </body>
 
 </html>

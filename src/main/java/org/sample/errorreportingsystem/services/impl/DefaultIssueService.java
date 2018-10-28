@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class DefaultIssueService implements IssueService {
@@ -22,5 +23,10 @@ public class DefaultIssueService implements IssueService {
         issue.setCreationDate(new Date());
 
         this.issueRepository.save(issue);
+    }
+
+    @Override
+    public List<Issue> findAllIssues() {
+        return this.issueRepository.findAll();
     }
 }

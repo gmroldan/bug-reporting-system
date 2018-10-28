@@ -35,4 +35,12 @@ public class IssueControllerTest {
         resultActions.andExpect(status().isOk())
                 .andExpect(view().name("issues/createNewIssue"));
     }
+
+    @Test
+    public void welcome() throws Exception {
+        ResultActions resultActions = this.mockMvc.perform(get("/"));
+
+        resultActions.andExpect(status().isOk())
+                .andExpect(view().name("welcome"));
+    }
 }
